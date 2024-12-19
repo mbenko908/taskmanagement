@@ -54,7 +54,7 @@ public class TaskJdbcRepository {
 		GET_BY_ID = "SELECT * FROM task WHERE id = ?";
 		GET_ALL_BY_USER = "SELECT * FROM task WHERE user_id = ?";
 		GET_ALL_BY_PROJECT = "SELECT * FROM project WHERE user_id = ?";
-		INSERT = "INSERT INTO task(user_id, project_id, name, description, status, created_at) VALUES (?, ?, ?, ?, ?, ?)";// nextval('public.user_id_seq'),
+		INSERT = "INSERT INTO task(user_id, project_id, name, description, status, created_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id";// nextval('public.user_id_seq'),
 		DELETE = "DELETE FROM task WHERE id = ?";
 		UPDATE = "UPDATE task SET name = ?, description = ?, status = ? WHERE id = ?";
 		UPDATE_PROJECT = "UPDATE task SET project_id = ?, description = ? WHERE id = ?";

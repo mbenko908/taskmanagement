@@ -6,7 +6,7 @@ import lombok.Value;
 
 @Value
 public class Task {
-	long id;
+	long taskId;
 	long userId;
 	Long projectId;
 	String name;

@@ -2,6 +2,7 @@ package sk.management.implementation.jdbc.repository.service;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import sk.management.api.UserService;
@@ -11,7 +12,8 @@ import sk.management.implementation.jdbc.repository.ProjectJdbcRepository;
 import sk.management.implementation.jdbc.repository.TaskJdbcRepository;
 import sk.management.implementation.jdbc.repository.UserJdbcRepository;
 
-@Service
+@Service()
+@Profile("jdbc")
 public class UserServiceJdbcImpl implements UserService {
 
 	private final UserJdbcRepository userJdbcRepository;

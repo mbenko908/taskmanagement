@@ -2,6 +2,8 @@ package sk.management.implementation.jdbc.repository.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import sk.management.api.ProjectService;
@@ -16,13 +18,15 @@ import sk.management.domain.TaskStatus;
 import sk.management.implementation.jdbc.repository.TaskJdbcRepository;
 
 @Service
+@Profile("jdbc")
 public class TaskServiceJdbcImpl implements TaskService {
 
 	public final TaskJdbcRepository repository;
 	public final UserService userService;
 	public final ProjectService projectService;
 
-	public TaskServiceJdbcImpl(TaskJdbcRepository repository, UserService userService, ProjectService projectService) {
+	public TaskServiceJdbcImpl(TaskJdbcRepository repository, @Qualifier("userServiceJpaImpl") UserService userService,
+			ProjectService projectService) {
 		this.repository = repository;
 		this.userService = userService;
 		this.projectService = projectService;
