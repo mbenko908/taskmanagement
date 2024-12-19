@@ -95,6 +95,27 @@
 	        <artifactId>jakarta.el</artifactId>
 	        <version>4.0.0</version>
 	    </dependency>
+    <!-- JUnit 5 dependencies for running tests -->
+	    <dependency>
+	        <groupId>org.junit.jupiter</groupId>
+	        <artifactId>junit-jupiter-api</artifactId>
+	        <version>5.8.2</version> <!-- Uisti sa, že verzia je aktuálna -->
+	        <scope>test</scope>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.junit.jupiter</groupId>
+	        <artifactId>junit-jupiter-engine</artifactId>
+	        <version>5.8.2</version> <!-- Uisti sa, že verzia je aktuálna -->
+	        <scope>test</scope>
+	    </dependency>
+	
+	    <!-- Spring Boot Test Dependency for integration testing -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-test</artifactId>
+	        <scope>test</scope>
+	    </dependency>
+	    
 	</dependencies>
 
 	<build>
